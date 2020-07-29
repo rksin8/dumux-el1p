@@ -1,0 +1,43 @@
+[TimeLoop]
+Dt = 100       # [s]
+TEnd = 1000    # [s]
+maxDt = 100    # [s]
+
+[Grid]
+LowerLeft = 0 0
+UpperRight = 10 20
+Cells = 20 40
+
+[Problem]
+EnableGravity = true
+OutputInterval = 1 # every 5th timestep an output file is written
+
+[PoroElastic.Problem]
+Name = poroelastic # name passed to the output routines
+F = 1.0e4
+
+[OneP.Problem]
+Name = onep # name passed to the output routines
+
+[SpatialParams]
+Permeability = 1e-13 # [m^2]
+InitialPorosity = 0.3 # [-]
+E = 1.0e9  # [Pa] Young's modulus
+PoissonRatio = 0.3 # Poisson's ratio
+Alpha = 0.79     # Biot constant
+
+[LinearSolver]
+ResidualReduction = 1e-20
+MaxIterations = 2000
+
+[Newton]
+MaxRelativeShift = 1e-4
+
+[Component]
+SolidDensity = 2700
+LiquidDensity  = 1000.0
+LiquidKinematicViscosity = 1.0e-3
+
+[Vtk]
+OutputName = test_el1p
+vtkOutputInterval = 20

@@ -1,0 +1,10 @@
+################################
+# Dune module information file #
+################################
+
+#Name of the module
+Module: dumux-el1p
+Version: 3.2
+Maintainer: ranjeet270@gmail.com
+#depending on
+Depends: dune-common dune-geometry dune-grid dune-localfunctions dune-functions dumux
